@@ -1,0 +1,243 @@
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport"
+content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+
+<title>Happy Birthday ❤️</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+<!-- Animated Background -->
+
+<div class="background">
+
+<div class="blob blob1"></div>
+
+<div class="blob blob2"></div>
+
+<div class="blob blob3"></div>
+
+</div>
+
+<!-- Floating Particles -->
+
+<div id="particles"></div>
+
+<!-- ======================
+Loading Screen
+======================= -->
+
+<section id="loading">
+
+<div class="glass">
+
+<div class="heart">❤️</div>
+
+<h1>Happy Birthday</h1>
+
+<h2>Arati</h2>
+
+<p>
+
+A little surprise is waiting for you...
+
+</p>
+
+<button id="startBtn">
+
+Tap To Start
+
+</button>
+
+</div>
+
+</section>
+
+<!-- ======================
+Balloon Screen
+======================= -->
+
+<section id="balloonPage">
+
+<h2>
+
+Pop all Balloons 🎈
+
+</h2>
+
+<p>
+
+Each balloon has a surprise...
+
+</p>
+
+<div class="balloonContainer">
+
+<div class="balloon" data-img="assets/img1.jpeg"></div>
+
+<div class="balloon" data-img="assets/img2.jpeg"></div>
+
+<div class="balloon" data-img="assets/img3.jpeg"></div>
+
+<div class="balloon" data-img="assets/img4.jpeg"></div>
+
+</div>
+
+</section>
+
+<!-- Image Popup -->
+
+<div id="photoPopup">
+
+<img id="popupPhoto">
+
+</div>
+
+<!-- ======================
+Gift Section
+====================== -->
+
+<section id="giftPage">
+
+    <div class="glass giftCard">
+
+        <img src="assets/gift.png"
+             class="giftImage"
+             alt="Gift">
+
+        <h2>A Small Gift For You 🎁</h2>
+
+        <p>Tap the gift to open it.</p>
+
+        <button id="giftBtn">
+
+            Open Gift ❤️
+
+        </button>
+
+    </div>
+
+</section>
+
+
+
+<!-- ======================
+Rose Page
+====================== -->
+
+<section id="rosePage">
+
+    <div class="glass">
+
+        <img src="assets/bouquet.png"
+             class="roseImage"
+             alt="Rose">
+
+        <h2>These Roses Are For You 🌹</h2>
+
+        <button id="roseNext">
+
+            Continue
+
+        </button>
+
+    </div>
+
+</section>
+
+
+
+<!-- ======================
+Envelope Page
+====================== -->
+
+<section id="letterPage">
+
+    <div class="envelope">
+
+        <div class="envelope-top"></div>
+
+        <div class="letter">
+
+            <h2>💌 A Letter</h2>
+
+            <p id="letterText"></p>
+
+        </div>
+
+    </div>
+
+    <button id="letterNext">
+
+        Continue ❤️
+
+    </button>
+
+</section>
+
+
+
+<!-- ======================
+Cake Page
+====================== -->
+
+<section id="cakePage">
+
+    <div class="cakeContainer">
+
+        <div class="cake">🎂</div>
+
+    </div>
+
+    <h2>Make A Wish ✨</h2>
+
+    <button id="cakeBtn">
+
+        Cut Cake 🎂
+
+    </button>
+
+</section>
+
+
+
+<!-- ======================
+Final Birthday Page
+====================== -->
+
+<section id="finalPage">
+
+    <h1>
+
+        Happy Birthday
+
+    </h1>
+
+    <h2>
+
+        Arati ❤️
+
+    </h2>
+
+    <p id="finalMessage"></p>
+
+    <div id="effects"></div>
+
+</section>
+
+<script src="script.js"></script>
+
+</body>
+</html>
