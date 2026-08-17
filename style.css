@@ -529,55 +529,288 @@ padding:22px;
 
  
 
- .letter{
+ /* ==========================================
+   LETTER PAGE
+========================================== */
+
+#letterPage{
+    display:none;
+    text-align:center;
+
+    /* Long letter ke liye */
+    overflow-y:auto;
+    overflow-x:hidden;
+
+    justify-content:flex-start;
+    padding-top:80px;
+    padding-bottom:40px;
+}
+
+
+/* ENVELOPE */
+
+.envelope{
+    position:relative;
+
+    width:320px;
+    height:220px;
+
+    margin:0 auto;
+
+    perspective:1000px;
+
+    flex-shrink:0;
+}
+
+
+/* ENVELOPE FLAP */
+
+.envelope-top{
     position:absolute;
+
+    top:0;
+    left:0;
+
+    width:100%;
+    height:110px;
+
+    background:#ff5c8a;
+
+    clip-path:polygon(
+        0 0,
+        100% 0,
+        50% 100%
+    );
+
+    transform-origin:top;
+
+    transition:transform .8s ease;
+
+    z-index:5;
+}
+
+
+/* ==========================================
+   LETTER PAPER
+========================================== */
+
+.letter{
+
+    position:absolute;
+
+    /*
+       IMPORTANT:
+       bottom:0 hata diya.
+       top fixed rahega.
+    */
+
+    top:55px;
     left:50%;
-    bottom:0;
 
     width:280px;
 
-    /* FIX */
+    /*
+       Text badhne par height automatically badhegi
+    */
     min-height:180px;
     height:auto;
 
     transform:translateX(-50%);
 
     background:#fff;
+
     border-radius:18px;
 
     padding:20px;
+
     box-sizing:border-box;
 
     color:#333;
 
-    box-shadow:0 15px 35px rgba(0,0,0,.25);
+    box-shadow:
+        0 15px 35px rgba(0,0,0,.25);
 
-    transition:transform .8s ease;
-
+    /*
+       Height automatically expand hogi
+    */
     overflow:visible;
+
+    z-index:2;
+
+    transition:
+        transform .8s ease;
 }
+
+
+/* ==========================================
+   LETTER OPEN
+========================================== */
+
+.envelope.open .envelope-top{
+
+    transform:rotateX(180deg);
+
+}
+
+
+.envelope.open .letter{
+
+    /*
+       Paper envelope se bahar aayega.
+       Lekin top fixed rehne ki wajah se
+       text badhne par paper neeche expand hoga.
+    */
+
+    transform:
+        translateX(-50%)
+        translateY(-90px);
+
+}
+
+
+/* ==========================================
+   LETTER HEADING
+========================================== */
 
 .letter h2{
+
     margin:0 0 15px 0;
+
     padding:0;
+
+    font-size:22px;
+
+    line-height:1.3;
+
     color:#333;
+
 }
 
+
+/* ==========================================
+   LETTER TEXT
+========================================== */
+
 #letterText{
+
     width:100%;
+
     margin:0;
+
     padding:0;
 
+    color:#333;
+
     font-size:16px;
+
     line-height:1.8;
 
     text-align:left;
 
+    /*
+       \n ko new line me rakhega
+    */
     white-space:pre-line;
+
+    /*
+       Long words overflow nahi karenge
+    */
     overflow-wrap:break-word;
 
+    word-break:normal;
+
     position:static;
+
     transform:none;
+
+}
+
+
+/* ==========================================
+   CONTINUE BUTTON
+========================================== */
+
+#letterNext{
+
+    width:280px;
+
+    margin:25px auto 0 auto;
+
+    flex-shrink:0;
+
+}
+
+
+/* ==========================================
+   MOBILE
+========================================== */
+
+@media(max-width:480px){
+
+    #letterPage{
+
+        padding-top:60px;
+
+        padding-bottom:30px;
+
+    }
+
+
+    .envelope{
+
+        width:280px;
+
+        height:200px;
+
+    }
+
+
+    .envelope-top{
+
+        height:100px;
+
+    }
+
+
+    .letter{
+
+        top:50px;
+
+        width:240px;
+
+        min-height:170px;
+
+        padding:18px;
+
+    }
+
+
+    .letter h2{
+
+        font-size:20px;
+
+        margin-bottom:12px;
+
+    }
+
+
+    #letterText{
+
+        font-size:15px;
+
+        line-height:1.7;
+
+    }
+
+
+    #letterNext{
+
+        width:240px;
+
+        margin-top:25px;
+
+    }
+
 }
 /* ==========================================
    CAKE PAGE
