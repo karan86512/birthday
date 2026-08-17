@@ -275,9 +275,9 @@ Enjoy your special day. 🎂🌸`;
 let letterIndex = 0;
 
 
-function startLetter() {
+ function startLetter() {
 
-    letterText.innerHTML = "";
+    letterText.textContent = "";
 
     letterIndex = 0;
 
@@ -286,7 +286,7 @@ function startLetter() {
 }
 
 
- function typeLetter() {
+function typeLetter() {
 
     if (letterIndex < letterMessage.length) {
 
@@ -298,9 +298,8 @@ function startLetter() {
         setTimeout(typeLetter, 35);
 
     }
+
 }
-
-
 
 /* ==========================================
    NEXT
