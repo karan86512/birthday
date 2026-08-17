@@ -286,11 +286,11 @@ function startLetter() {
 }
 
 
-function typeLetter() {
+ function typeLetter() {
 
     if (letterIndex < letterMessage.length) {
 
-        letterText.innerHTML +=
+        letterText.textContent +=
             letterMessage.charAt(letterIndex);
 
         letterIndex++;
@@ -298,7 +298,6 @@ function typeLetter() {
         setTimeout(typeLetter, 35);
 
     }
-
 }
 
 
