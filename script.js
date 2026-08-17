@@ -281,9 +281,8 @@ let letterIndex = 0;
 
     letterIndex = 0;
 
-    updateLetterButton();
-
     typeLetter();
+
 }
 
  function typeLetter() {
@@ -295,13 +294,7 @@ let letterIndex = 0;
 
         letterIndex++;
 
-        updateLetterButton();
-
         setTimeout(typeLetter, 35);
-
-    } else {
-
-        updateLetterButton();
 
     }
 }
