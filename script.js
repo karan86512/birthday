@@ -281,12 +281,12 @@ let letterIndex = 0;
 
     letterIndex = 0;
 
-    typeLetter();
+    updateLetterButton();
 
+    typeLetter();
 }
 
-
-  function typeLetter() {
+ function typeLetter() {
 
     if (letterIndex < letterMessage.length) {
 
@@ -295,14 +295,12 @@ let letterIndex = 0;
 
         letterIndex++;
 
-        // Button ko letter ke neeche rakho
         updateLetterButton();
 
         setTimeout(typeLetter, 35);
 
     } else {
 
-        // Typing complete hone ke baad final position
         updateLetterButton();
 
     }
@@ -659,3 +657,18 @@ function toggleMusic(){
 
 
 console.log("Birthday Surprise V2 Loaded ❤️");
+
+function updateLetterButton() {
+
+    const letter = document.querySelector(".letter");
+    const envelope = document.querySelector(".envelope");
+    const button = document.getElementById("letterNext");
+
+    if (!letter || !envelope || !button) return;
+
+    const letterBottom =
+        letter.offsetTop + letter.offsetHeight;
+
+    envelope.style.height =
+        (letterBottom + 30) + "px";
+}
