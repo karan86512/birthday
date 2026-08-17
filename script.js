@@ -286,7 +286,7 @@ let letterIndex = 0;
 }
 
 
-function typeLetter() {
+  function typeLetter() {
 
     if (letterIndex < letterMessage.length) {
 
@@ -295,12 +295,31 @@ function typeLetter() {
 
         letterIndex++;
 
+        // Button ko letter ke neeche rakho
+        updateLetterButton();
+
         setTimeout(typeLetter, 35);
 
-    }
+    } else {
 
+        // Typing complete hone ke baad final position
+        updateLetterButton();
+
+    }
 }
 
+
+function updateLetterButton() {
+
+    const letter = document.querySelector(".letter");
+    const button = document.getElementById("letterNext");
+
+    if (!letter || !button) return;
+
+    const letterHeight = letter.offsetHeight;
+
+    button.style.marginTop = "25px";
+}
 /* ==========================================
    NEXT
 ========================================== */
