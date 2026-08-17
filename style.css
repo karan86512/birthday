@@ -499,7 +499,7 @@ padding:22px;
 
 }
 
-/* ==========================================
+ /* ==========================================
    LETTER PAGE
 ========================================== */
 
@@ -527,21 +527,38 @@ padding:22px;
     z-index:5;
 }
 
+/* LETTER */
 .letter{
     position:absolute;
     left:50%;
     bottom:0;
-    transform:translateX(-50%);
+
     width:280px;
+    height:180px;
     min-height:180px;
+
+    transform:translateX(-50%);
+    transform-origin:center center;
+
     background:#fff;
     border-radius:18px;
     padding:20px;
+
     color:#333;
     box-shadow:0 15px 35px rgba(0,0,0,.25);
-    transition:.8s;
+
+    transition:transform .8s ease;
+    overflow:hidden;
+
+    display:flex;
+    flex-direction:column;
+    justify-content:flex-start;
+    align-items:center;
+
+    box-sizing:border-box;
 }
 
+/* OPEN ENVELOPE */
 .envelope.open .envelope-top{
     transform:rotateX(180deg);
 }
@@ -550,10 +567,44 @@ padding:22px;
     transform:translateX(-50%) translateY(-90px);
 }
 
+/* LETTER TEXT */
 #letterText{
-    margin-top:15px;
-    line-height:1.8;
+    margin:0;
+    padding:0;
+
+    width:100%;
+
     font-size:16px;
+    line-height:1.8;
+
+    text-align:left;
+
+    color:#333;
+
+    position:relative;
+    top:0;
+    transform:none;
+}
+
+/* Mobile */
+@media(max-width:480px){
+
+    .envelope{
+        width:280px;
+        height:200px;
+    }
+
+    .letter{
+        width:240px;
+        height:180px;
+        min-height:180px;
+        padding:18px;
+    }
+
+    #letterText{
+        font-size:15px;
+        line-height:1.7;
+    }
 }
 
 
