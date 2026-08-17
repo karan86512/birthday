@@ -254,7 +254,7 @@ roseNext.addEventListener("click", () => {
 });
 
 
-/* ==========================================
+ /* ==========================================
    LETTER
 ========================================== */
 
@@ -275,7 +275,11 @@ Enjoy your special day. 🎂🌸`;
 let letterIndex = 0;
 
 
- function startLetter() {
+/* ==========================================
+   START LETTER
+========================================== */
+
+function startLetter(){
 
     letterText.textContent = "";
 
@@ -285,31 +289,24 @@ let letterIndex = 0;
 
 }
 
- function typeLetter() {
 
-    if (letterIndex < letterMessage.length) {
+/* ==========================================
+   TYPE LETTER
+========================================== */
+
+function typeLetter(){
+
+    if(letterIndex < letterMessage.length){
 
         letterText.textContent +=
             letterMessage.charAt(letterIndex);
 
         letterIndex++;
 
-        setTimeout(typeLetter, 35);
+        setTimeout(typeLetter,35);
 
     }
-}
 
-
-function updateLetterButton() {
-
-    const letter = document.querySelector(".letter");
-    const button = document.getElementById("letterNext");
-
-    if (!letter || !button) return;
-
-    const letterHeight = letter.offsetHeight;
-
-    button.style.marginTop = "25px";
 }
 /* ==========================================
    NEXT
