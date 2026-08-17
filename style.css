@@ -534,83 +534,60 @@ padding:22px;
     left:50%;
     bottom:0;
 
-    transform:translateX(-50%);
-
     width:280px;
     min-height:180px;
     height:auto;
 
+    transform:translateX(-50%);
+
     background:#fff;
     border-radius:18px;
+
     padding:20px;
 
     color:#333;
 
     box-shadow:0 15px 35px rgba(0,0,0,.25);
 
+    box-sizing:border-box;
+
     transition:
         transform .8s ease,
         height .4s ease;
 
-    box-sizing:border-box;
-
-    display:block;
+    overflow:visible;
 }
 
-/* Open envelope */
-.envelope.open .envelope-top{
-    transform:rotateX(180deg);
+/* Letter heading */
+.letter h2{
+    margin:0 0 15px 0;
+    padding:0;
+
+    color:#333;
+    font-size:22px;
+    line-height:1.3;
 }
 
-.envelope.open .letter{
-    transform:translateX(-50%) translateY(-90px);
-}
-
-
-/* LETTER TEXT */
+/* Letter text */
 #letterText{
     width:100%;
 
     margin:0;
     padding:0;
 
+    color:#333;
+
     font-size:16px;
     line-height:1.8;
 
     text-align:left;
 
-    color:#333;
-
     white-space:normal;
     overflow-wrap:break-word;
 
-    position:relative;
-    top:0;
+    position:static;
     transform:none;
 }
-
-
-/* MOBILE */
-@media(max-width:480px){
-
-    .envelope{
-        width:280px;
-        height:200px;
-    }
-
-    .letter{
-        width:240px;
-        min-height:180px;
-        height:auto;
-        padding:18px;
-    }
-
-    #letterText{
-        font-size:15px;
-        line-height:1.7;
-    }
-}
-
 /* ==========================================
    CAKE PAGE
 ========================================== */
