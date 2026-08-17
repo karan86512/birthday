@@ -527,38 +527,37 @@ padding:22px;
     z-index:5;
 }
 
-/* LETTER */
-.letter{
+ 
+
+ .letter{
     position:absolute;
     left:50%;
     bottom:0;
 
-    width:280px;
-    height:180px;
-    min-height:180px;
-
     transform:translateX(-50%);
-    transform-origin:center center;
+
+    width:280px;
+    min-height:180px;
+    height:auto;
 
     background:#fff;
     border-radius:18px;
     padding:20px;
 
     color:#333;
+
     box-shadow:0 15px 35px rgba(0,0,0,.25);
 
-    transition:transform .8s ease;
-    overflow:hidden;
-
-    display:flex;
-    flex-direction:column;
-    justify-content:flex-start;
-    align-items:center;
+    transition:
+        transform .8s ease,
+        height .4s ease;
 
     box-sizing:border-box;
+
+    display:block;
 }
 
-/* OPEN ENVELOPE */
+/* Open envelope */
 .envelope.open .envelope-top{
     transform:rotateX(180deg);
 }
@@ -567,12 +566,13 @@ padding:22px;
     transform:translateX(-50%) translateY(-90px);
 }
 
+
 /* LETTER TEXT */
 #letterText{
+    width:100%;
+
     margin:0;
     padding:0;
-
-    width:100%;
 
     font-size:16px;
     line-height:1.8;
@@ -581,12 +581,16 @@ padding:22px;
 
     color:#333;
 
+    white-space:normal;
+    overflow-wrap:break-word;
+
     position:relative;
     top:0;
     transform:none;
 }
 
-/* Mobile */
+
+/* MOBILE */
 @media(max-width:480px){
 
     .envelope{
@@ -596,8 +600,8 @@ padding:22px;
 
     .letter{
         width:240px;
-        height:180px;
         min-height:180px;
+        height:auto;
         padding:18px;
     }
 
@@ -606,7 +610,6 @@ padding:22px;
         line-height:1.7;
     }
 }
-
 
 /* ==========================================
    CAKE PAGE
