@@ -503,26 +503,30 @@ padding:22px;
    LETTER PAGE
 ========================================== */
 
-#letterPage{
-    display:none;
-    text-align:center;
-    justify-content:flex-start;
+ #letterNext{
+    position:relative;
 
-    overflow-y:auto;
-    overflow-x:hidden;
+    z-index:20;
 
-    padding:50px 20px 40px;
+    width:280px;
+
+    margin:25px auto 0;
+
+    display:block;
+
+    flex-shrink:0;
 }
-
 
 /* ==========================================
    ENVELOPE
 ========================================== */
 
-.envelope{
+ .envelope{
     position:relative;
 
     width:320px;
+
+    /* letter ki actual height ke liye space */
     min-height:220px;
     height:auto;
 
@@ -531,6 +535,14 @@ padding:22px;
     perspective:1000px;
 
     flex-shrink:0;
+
+    /*
+       Letter open hone ke baad
+       button ke liye extra space
+    */
+    padding-bottom:120px;
+
+    box-sizing:border-box;
 }
 
 
@@ -714,48 +726,21 @@ padding:22px;
    MOBILE
 ========================================== */
 
-@media(max-width:480px){
-
-    #letterPage{
-        padding:35px 15px 30px;
-    }
+ @media(max-width:480px){
 
     .envelope{
         width:280px;
+
         min-height:200px;
-    }
 
-    .envelope-top{
-        height:100px;
-    }
-
-    .letter{
-
-        width:240px;
-
-        min-height:170px;
-
-        height:auto;
-
-        margin-top:35px;
-
-        padding:18px;
-    }
-
-    .letter h2{
-        font-size:20px;
-        margin-bottom:12px;
-    }
-
-    #letterText{
-        font-size:15px;
-        line-height:1.7;
+        padding-bottom:120px;
     }
 
     #letterNext{
         width:240px;
         margin-top:25px;
     }
+
 }
 /* ==========================================
    CAKE PAGE
